@@ -40,10 +40,5 @@ ggsave(filepath, p, dpi = 400, height = 3, width = 6)
 
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-
 ```
 
