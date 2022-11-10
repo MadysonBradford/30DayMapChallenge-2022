@@ -24,7 +24,6 @@ library(ggplot2)
 
 mars_DEM_path <- ("")
 marsRGB_DEM <- brick(mars_DEM_path)
-marsRGB_DEM <- setMinMax(marsRGB_DEM)
 
 png("MB-MarsRGB.png",width=800,height=600)
 
@@ -33,9 +32,5 @@ png("MB-MarsRGB.png",width=800,height=600)
               adj=0.5))
 
 dev.off()
-
-marsRGB_DEM
-marsRGB_DEM@crs
-marsRGB_DEM@extent
 
 ```
