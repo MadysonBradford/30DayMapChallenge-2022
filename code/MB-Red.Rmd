@@ -1,0 +1,35 @@
+---
+title: "MB-Red"
+author: "Madyson Bradford"
+date: "11/9/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+library(usmap)
+library(ggplot2)
+library(maptools)
+
+data <- read.csv("C:/Users/Madyson/Documents/Data/Birds/Totals-RWBB-2022.csv")
+blackbirds <- data.frame(data)
+head(blackbirds)
+
+blackbirds_transformed <- usmap_transform(blackbirds,
+                                          input_names = c("Longitude","Latitude"))
+
+plot_usmap() +
+  geom_point(data = blackbirds_transformed, aes(x = x, y = y, size = Number),
+             color = "red", alpha = 0.25) +
+  labs(title = "Red-winged Blackbird Sightings: 2022",
+       subtitle = "Source: JourneyNorth, University of Wisconsin-Madison Arboretum",
+       size = "Number of Sightings") +
+  theme(legend.position = "right")
+
+
+
+```
+
