@@ -1,0 +1,41 @@
+---
+title: "MB-Mars"
+author: "Madyson Bradford"
+date: "11/9/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r echo=FALSE}
+
+library(raster)
+library(sp)
+library(rgdal)
+library(ggplot2)
+
+mars_DEM_path <- ("")
+marsRGB_DEM <- brick(mars_DEM_path)
+marsRGB_DEM <- setMinMax(marsRGB_DEM)
+
+png("MB-MarsRGB.png",width=800,height=600)
+
+(mars <- plot(marsRGB_DEM,
+              main="Flyover of Mars Impact Using HiRISE Data, NASA", 
+              adj=0.5))
+
+dev.off()
+
+marsRGB_DEM
+marsRGB_DEM@crs
+marsRGB_DEM@extent
+
+```
