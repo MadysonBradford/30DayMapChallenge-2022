@@ -1,6 +1,0 @@
-"0",""
-"0","#save map"
-"0",""
-"0","filepath = ""C:/Users/Madyson/Documents/GIS Portfolio/MB_equakes.png"""
-"0","ggsave(filepath, p, dpi = 400, height = 3, width = 6)"
-"0",""
