@@ -1,0 +1,42 @@
+---
+title: "MB-Lines-2022"
+author: "Madyson Bradford"
+date: "11/4/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+#Load packages
+
+library(tidyverse)
+
+font_add_google("Offside", "Offside")
+showtext_auto()
+
+eq_data <- quakes
+
+#mapping
+
+(p <- ggplot() +
+  geom_line(data = eq_data, aes(lat, long, colour = mag),size = 0.3, show.legend = FALSE) +
+    scale_color_gradient(low = "black", high = "red") +
+    labs(title = "Earthquakes", subtitle = "Locations of earthquakes off Fiji",caption = "Madyson Bradford -- November 2022 -- #30DayMapChallenge") +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "#fcf9f7"),
+        plot.title = element_text(family = "Offside", colour = "black", size = 65, hjust = 0.5),
+        plot.subtitle = element_text(family = "Offside", colour = "black", size = 35, hjust = 0.5),
+        plot.caption = element_text(family = "Offside", colour = "black", size = 30, hjust=0.9), 
+        plot.margin = margin(t = 20, b = 20)
+  ))
+
+#save map
+
+filepath = ""
+ggsave(filepath, p, dpi = 400, height = 3, width = 6)
+
+```
+

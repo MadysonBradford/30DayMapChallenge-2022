@@ -1,0 +1,33 @@
+"0",""
+"0","library(raster)"
+"0","library(sp)"
+"0","library(rgdal)"
+"0","library(ggplot2)"
+"0",""
+"0","mars_DEM_path <- (""C:/Users/Madyson/Documents/Data/Mars/PIA25586.tif"")"
+"0","marsRGB_DEM <- brick(mars_DEM_path)"
+"2","Warning:"
+"2"," [rast] unknown extent
+
+"
+"0","marsRGB_DEM <- setMinMax(marsRGB_DEM)"
+"0",""
+"0","png(""MB-MarsRGB.png"",width=800,height=600)"
+"0",""
+"0","(mars <- plot(marsRGB_DEM,"
+"0","              main=""Flyover of Mars Impact Using HiRISE Data, NASA"", "
+"0","              adj=0.5))"
+"2","Warning:"
+"2"," [rast] unknown extent
+
+"
+"2","Warning:"
+"2"," [rast] unknown extent
+
+"
+"2","Warning:"
+"2"," [rast] unknown extent
+
+"
+"1","NULL
+"
