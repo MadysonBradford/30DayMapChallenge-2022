@@ -31,7 +31,6 @@ png("MB-MarsRGB.png",width=800,height=600)
 (mars <- plot(marsRGB_DEM,
               main="Flyover of Mars Impact Using HiRISE Data, NASA", 
               adj=0.5))
-
 dev.off()
 
 marsRGB_DEM
